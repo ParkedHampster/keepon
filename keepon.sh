@@ -12,7 +12,7 @@ screenset=:
 [[ "$(xdg-screensaver status)" == "enabled" ]] && screenset="xdg-screensaver reset"
 # if dpms enabled, define delay to toggle it before resetting screensaver
 # otherwise just reset screensaver
-[[ "$(xset -q)" == *"DPMS is Enabled"* ]] && function delay() { xset -dpms ; xset dpms ; $screenset ; echo "toggled" ; } || function delay() { $screenset ; }
+[[ "$(xset -q)" == *"DPMS is Enabled"* ]] && function delay() { xset -dpms ; xset dpms ; $screenset ; } || function delay() { $screenset ; }
 
 while true
 do 
